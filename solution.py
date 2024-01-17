@@ -1,4 +1,4 @@
-print("joel lao ren jia")
+print("kill yourself")
 
-joel = "old"
+zx = "BAD"
 print(joel)
