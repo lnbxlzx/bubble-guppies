@@ -16,4 +16,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         #get the day and amount for each record
         #and append to the cash on hand list
-        cash_on_hand.append([row[0],row[1]])   
+        cash_on_hand.append([row[0],row[1]]) 
+
+
+cash_on_hand_diff = 0
+for row in cash_on_hand:
+    day = row[0]
+    amount = row[1]
+
+    
