@@ -21,18 +21,19 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 highest_percentage = 0
 highest_percentage_overheads = None
 
-overheads = []
+
 for row in overheads:
     Category = row[0]
-    Percentage = row[1]
+    Percentage = float(row[1].replace("%",""))
 
-    highest_percentage = max(overhead[1] for overhead in overheads)
-    highest_overhead = [overhead for overhead in overheads if overhead[1] == highest_percentage]
+    if Percentage > highest_percentage:
+        highest_percentage = Percentage
+        highest_percentage_overheads = Category
 
 output_file = "Summary_report.txt"
 with open(output_file, "w") as file:
 
     #write driver data in txt file
 
-    file.write(f"[HIGHEST OVERHEADS] {max(highest_overhead)}):{highest_percentage}")
+    file.write(f"[HIGHEST OVERHEADS] {highest_percentage_overheads} {highest_percentage}%")
 
