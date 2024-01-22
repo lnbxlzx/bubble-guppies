@@ -24,10 +24,23 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 cash_on_hand_diff = 0
 for row in cash_on_hand:
-    day = row[0]
-    amount = row[1]
-    def calculate_surplus:
-    nextday = day += 1
+    day_number = row[0]
+    s_amount = row[1]
+    prev_amount = row [1][0]
+    cashsurplus = 0
+
+    def calculate_surplus():
+        for prev_amount in surplus:
+            if s_amount > prev_amount:
+                cashsurplus = s_amount - prev_amount
+            else:
+                None
+        return 
+            
+    if cashsurplus > highest_surplus:
+        highest_surplus = final_surplus
+        day_number = day
+
     
     
 
