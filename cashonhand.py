@@ -26,5 +26,15 @@ cash_on_hand_diff = 0
 for row in cash_on_hand:
     day = row[0]
     amount = row[1]
+  if Percentage > highest_percentage:
+        highest_percentage = Percentage
+        highest_percentage_overheads = Category
+
+output_file = "Summary_report.txt"
+with open(output_file, "w") as file:
+
+    #write driver data in txt file
+
+    file.write(f"[HIGHEST OVERHEADS] {highest_percentage_overheads} {highest_percentage}%")
 
     
