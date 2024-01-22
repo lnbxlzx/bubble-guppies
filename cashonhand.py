@@ -40,11 +40,8 @@ for row in cash_on_hand:
                 None
                 
     if cashsurplus > highest_surplus:
-        highest_surplus = final_surplus
-        day_number = day
-
-    
-    
+        final_surplus = highest_surplus
+        day = day_number
 
 output_file = "Summary_report.txt"
 with open(output_file, "w") as file:
