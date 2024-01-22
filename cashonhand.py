@@ -47,7 +47,6 @@ output_file = "Summary_report.txt"
 with open(output_file, "w") as file:
 
     #write driver data in txt file
-    file.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
     file.write(f"[HIGHEST CASH SURPLUS] {day} {highest_surplus}%")
 
     
