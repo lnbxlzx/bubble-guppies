@@ -1,6 +1,9 @@
 import csv
 from pathlib import Path
 
+deficit = []
+surplus = []
+
 # create a file path to csv file.
 fp = Path.cwd()/"cashonhand.csv"
 
