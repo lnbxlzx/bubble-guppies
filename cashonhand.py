@@ -26,9 +26,10 @@ cash_on_hand_diff = 0
 for row in cash_on_hand:
     day = row[0]
     amount = row[1]
-  if Percentage > highest_percentage:
-        highest_percentage = Percentage
-        highest_percentage_overheads = Category
+    def calculate_surplus:
+    nextday = day += 1
+    
+    
 
 output_file = "Summary_report.txt"
 with open(output_file, "w") as file:
