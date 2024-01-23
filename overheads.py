@@ -35,5 +35,5 @@ with open(output_file, "w") as file:
 
     #write driver data in txt file
 
-    file.write(f"[HIGHEST OVERHEADS] {highest_percentage_overheads} {highest_percentage}%")
+    file.write(f"[HIGHEST OVERHEADS] {highest_percentage_overheads.upper()} {highest_percentage}%")
 
