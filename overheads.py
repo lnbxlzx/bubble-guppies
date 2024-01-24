@@ -1,39 +1,33 @@
 import csv
 from pathlib import Path
 
-# create a file path to csv file.
-fp = Path.cwd()/"overheads.csv"
 
-# read the csv file.
-with fp.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv.reader(file)
-    next(reader) # skip header
+def overheads():
+    # File path to csv file, cwd means current working directory
+    fp = Path.cwd()/"csv_reports/Overheads.csv"
 
-    # create an empty list for overheads
-    overheads=[] 
+    # Open the file in read mode, encoding is set to UTF-8, newline is set to "" to prevent blank lines
+    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+        reader = csv.reader(file)
+        # Skip the first row of the csv file, since it is header
+        next(reader) 
+        overheads=[] 
 
-    # append cash on hand into the overheads list
-    for row in reader:
-        #get the type of overheads and its percentage for each record
-        #and append to the overheads list
-        overheads.append([row[0],row[1]]) 
+        # Loop through the rows in the csv file and append them to the overheads list as a list of 2 elements, category and percentage
+        for row in reader:
+            overheads.append([row[0],row[1]]) 
 
-highest_percentage = 0
-highest_percentage_overheads = None
+    # Intialize the highest_percentage and highest_percentage_category variables
+    highest_percentage = 0
+    highest_percentage_category = None
 
-
-for row in overheads:
-    Category = row[0]
-    Percentage = float(row[1].replace("%",""))
-
-    if Percentage > highest_percentage:
-        highest_percentage = Percentage
-        highest_percentage_overheads = Category
-
-output_file = "Summary_report.txt"
-with open(output_file, "w") as file:
-
-    #write driver data in txt file
-
-    file.write(f"[HIGHEST OVERHEADS] {highest_percentage_overheads.upper()} {highest_percentage}%")
-
+    # Loop through the overheads list and compare the percentage to the highest_percentage, if it is higher, 
+    # then set the highest_percentage to the current percentage and set the highest_percentage_category to the current category
+    for row in overheads:
+        # Convert the percentage from string to float and compare it to the highest_percentage
+        if highest_percentage_category is None or float(row[1]) > highest_percentage:
+            highest_percentage = float(row[1])
+            highest_percentage_category = row[0]
+    
+    # Return the highest_percentage_category and highest_percentage as a list
+    return [f"[HIGHEST OVERHEADS] {highest_percentage_category.upper()}: {highest_percentage}%"]
