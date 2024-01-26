@@ -57,19 +57,19 @@ def cash_on_hand():
 
     if is_increasing:
         lines = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY"]
-        lines.append(f"[HIGHEST CASH SURPLUS] DAY: {max_increment['day']}, AMOUNT: USD {max_increment['amount']} ")
+        lines.append(f"[HIGHEST CASH SURPLUS] DAY: {max_increment['day']}, AMOUNT: SGD {max_increment['amount']} ")
     elif is_decreasing:
         lines = ["[CASH DEFICIT] CASH ON EACH DAY IS LOWER THAN PREVIOUS DAY"]
-        lines.append(f"[HIGHEST CASH DEFICIT] DAY: {max_decrement['day']}, AMOUNT: USD {max_decrement['amount']} ")    
+        lines.append(f"[HIGHEST CASH DEFICIT] DAY: {max_decrement['day']}, AMOUNT: SGD {max_decrement['amount']} ")    
     else:
         lines = []
         for amount, day in deficits:
-            lines.append(f"[CASH DEFICIT] DAY: {day}, AMOUNT: USD {amount}")
+            lines.append(f"[CASH DEFICIT] DAY: {day}, AMOUNT: SGD {amount}")
         deficits.sort()
         top_3_deficits = deficits[:3]
-        lines.append(f"[HIGHEST CASH DEFICIT] DAY: {top_3_deficits[0][1]}, AMOUNT: USD {top_3_deficits[0][0]}")
-        lines.append(f"[2ND HIGHEST CASH DEFICIT] DAY: {top_3_deficits[1][1]}, AMOUNT: USD {top_3_deficits[1][0]}")
-        lines.append(f"[3RD HIGHEST CASH DEFICIT] DAY: {top_3_deficits[2][1]}, AMOUNT: USD {top_3_deficits[2][0]}")
+        lines.append(f"[HIGHEST CASH DEFICIT] DAY: {top_3_deficits[0][1]}, AMOUNT: SGD {top_3_deficits[0][0]}")
+        lines.append(f"[2ND HIGHEST CASH DEFICIT] DAY: {top_3_deficits[1][1]}, AMOUNT: SGD {top_3_deficits[1][0]}")
+        lines.append(f"[3RD HIGHEST CASH DEFICIT] DAY: {top_3_deficits[2][1]}, AMOUNT: SGD {top_3_deficits[2][0]}")
     return lines
 
     
