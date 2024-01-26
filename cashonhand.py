@@ -1,7 +1,6 @@
 import csv
 from pathlib import Path
 
-
 def cash_on_hand():
     # File path to csv file, cwd means current working directory
     fp = Path.cwd() / "csv_reports/Cash_on_Hand.csv"
