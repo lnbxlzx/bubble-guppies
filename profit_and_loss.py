@@ -60,19 +60,19 @@ def profit_and_loss():
 
     if is_increasing:
         lines = ["[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY"]
-        lines.append(f"[HIGHEST NET PROFIT SURPLUS] DAY: {max_increment['day']}, AMOUNT: USD {max_increment['amount']} ")
+        lines.append(f"[HIGHEST NET PROFIT SURPLUS] DAY: {max_increment['day']}, AMOUNT: SGD {max_increment['amount']} ")
     elif is_decreasing:
         lines = ["[NET PROFIT DEFICIT] NET PROFIT ON EACH DAY IS LOWER THAN PREVIOUS DAY"]
-        lines.append(f"[HIGHEST NET PROFIT DEFICIT] DAY: {max_decrement['day']}, AMOUNT: USD {max_decrement['amount']} ")    
+        lines.append(f"[HIGHEST NET PROFIT DEFICIT] DAY: {max_decrement['day']}, AMOUNT: SGD {max_decrement['amount']} ")    
     else:
         lines = []
         for amount, day in deficits:
-            lines.append(f"[NET PROFIT DEFICIT] DAY: {day}, AMOUNT: USD {amount}")
+            lines.append(f"[NET PROFIT DEFICIT] DAY: {day}, AMOUNT: SGD {amount}")
 
         # Sort the deficits list by the amount, then get the top 3 deficits
         deficits.sort()
         top_3_deficits = deficits[-3:]
-        lines.append(f"[HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-1][1]}, AMOUNT: USD {top_3_deficits[-1][0]}")
-        lines.append(f"[2ND HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-2][1]}, AMOUNT: USD {top_3_deficits[-2][0]}")
-        lines.append(f"[3RD HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-3][1]}, AMOUNT: USD {top_3_deficits[-3][0]}")
+        lines.append(f"[HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-1][1]}, AMOUNT: SGD {top_3_deficits[-1][0]}")
+        lines.append(f"[2ND HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-2][1]}, AMOUNT: SGD {top_3_deficits[-2][0]}")
+        lines.append(f"[3RD HIGHEST NET PROFIT DEFICIT] DAY: {top_3_deficits[-3][1]}, AMOUNT: SGD {top_3_deficits[-3][0]}")
     return lines
